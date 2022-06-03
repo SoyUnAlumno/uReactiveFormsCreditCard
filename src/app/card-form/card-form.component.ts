@@ -14,7 +14,9 @@ cardForm = new FormGroup({
   ]),  
 
 });
-  constructor() { }
+  constructor() { 
+    console.log(this.cardForm.controls['name']);    
+  }
 
   ngOnInit(): void {
   }
