@@ -23,6 +23,12 @@ cardForm = new FormGroup({
     console.log(this.cardForm.controls['name']);    
   }
 
+
+  onSubmit(){
+    console.log("Form was submitted");
+  }
+
+
   ngOnInit(): void {
   }
 
