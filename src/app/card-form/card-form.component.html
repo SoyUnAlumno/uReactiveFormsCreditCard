@@ -6,6 +6,7 @@
   <app-input label="Security code" [control]="cardForm.controls['securityCode']"></app-input>
   <br />
   <button type="submit" class="button is-primary" [disabled]="cardForm.invalid">Submit</button>
+  <button type="button" class="button is-warning" (click)="onResetClick()">Reset</button>
 </form>
 
 <br />
