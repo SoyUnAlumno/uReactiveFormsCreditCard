@@ -14,9 +14,21 @@ cardForm = new FormGroup({
    /*  Validators.maxLength(5), // Not needed, just examples after required and minLength
     Validators.pattern(/\s/), // User can only add spaces */
   ]),  
-  cardNumber : new FormControl(''),
-  expiration: new FormControl(''),
-  securityCode: new FormControl(''),
+  cardNumber : new FormControl('',
+  [Validators.required,
+    Validators.minLength(16),
+    Validators.maxLength(16),
+  ]),
+  expiration: new FormControl('', [
+    Validators.required,
+    // validates pattern 01/01 mm/dd
+    Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/),
+  ]),
+  securityCode: new FormControl('', [
+    Validators.required,
+    Validators.minLength(3), // doesn't validate input is only number yet
+    Validators.maxLength(3),
+  ]),
 
 });
   constructor() { 
