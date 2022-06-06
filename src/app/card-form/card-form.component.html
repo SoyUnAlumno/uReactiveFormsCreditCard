@@ -1,6 +1,9 @@
 <form [formGroup]="cardForm">
     <!-- Passes entire control (name = new FormControl) down to the component-->
-  <app-input label="Nameee" [control]="cardForm.controls['name']"></app-input>
+  <app-input label="Name" [control]="cardForm.controls['name']"></app-input>
+  <app-input label="Card number" [control]="cardForm.controls['cardNumber']"></app-input>
+  <app-input label="Expiration" [control]="cardForm.controls['expiration']"></app-input>
+  <app-input label="Security code" [control]="cardForm.controls['securityCode']"></app-input>
 </form>
 
 <br />

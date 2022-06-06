@@ -14,6 +14,9 @@ cardForm = new FormGroup({
    /*  Validators.maxLength(5), // Not needed, just examples after required and minLength
     Validators.pattern(/\s/), // User can only add spaces */
   ]),  
+  cardNumber : new FormControl(''),
+  expiration: new FormControl(''),
+  securityCode: new FormControl(''),
 
 });
   constructor() { 
