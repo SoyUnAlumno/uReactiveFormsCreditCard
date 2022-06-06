@@ -1,16 +1,6 @@
 <form [formGroup]="cardForm">
-  <input formControlName="name" />
-  <!-- Checks if errors is null-->
-  <ng-container  *ngIf="cardForm.controls['name'].dirty && cardForm.controls['name'].touched && cardForm.controls['name'].errors">
-    <div *ngIf="cardForm.controls['name'].errors['required']">
-      Value is required
-    </div>
-    <div *ngIf="cardForm.controls['name'].errors['minlength']">
-        Value must be longer 
-        (entered: {{ cardForm.controls['name'].errors['minlength']['actualLength'] }}
-        | minimum: {{ cardForm.controls['name'].errors['minlength']['requiredLength'] }})
-      </div>
-  </ng-container>
+    <!-- Passes entire control (name = new FormControl) down to the component-->
+  <app-input [control]="cardForm.controls['name']"></app-input>
 </form>
 
 <br />
@@ -18,6 +8,6 @@
 <!-- Debugs -->
 <div>Form Contents: {{ cardForm.value | json }}</div>
 <div>Form is valid: {{ cardForm.valid }}</div>
-<div>Errors around name: {{ cardForm.controls["name"].errors | json }}</div>
+<div>Errors around name: {{ cardForm.controls['name'].errors | json }}</div>
 <!-- Can also be found like this:
 <div>Errors around name: {{ cardForm.get('name').errors | json }}</div> -->

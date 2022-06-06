@@ -1,0 +1,18 @@
+<div class="field">
+  <input [formControl]="control" />
+  <!-- Checks if errors is null-->
+  <ng-container *ngIf="control.dirty && control.touched && control.errors">
+    <div *ngIf="control.errors['required']">Value is required</div>
+    <div *ngIf="control.errors['minlength']">
+      Value must be longer (entered:
+      {{ control.errors["minlength"]["actualLength"] }} | minimum:
+      {{ control.errors["minlength"]["requiredLength"] }})
+    </div>
+    <div *ngIf="control.errors.maxlength">
+      Value entered is {{ control.errors.maxlength.actualLength }} characters
+      long, but it cannot be longer than
+      {{ control.errors.maxlength.requiredLength }} characters.
+    </div>
+    <div *ngIf="control.errors.pattern">Invalid format.</div>
+  </ng-container>
+</div>
